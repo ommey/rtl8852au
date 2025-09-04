@@ -390,8 +390,8 @@ static int openFile(struct file **fpp, const char *path, int flag, int mode)
 	struct file *fp;
 
 #if defined(MODULE_IMPORT_NS)
-	MODULE_IMPORT_NS(VFS_internal_I_am_really_a_filesystem_and_am_NOT_a_driver);
-#endif
+//	MODULE_IMPORT_NS(VFS_internal_I_am_really_a_filesystem_and_am_NOT_a_driver);
+ #endif
 
 	fp = filp_open(path, flag, mode);
 	if (IS_ERR(fp)) {
@@ -508,7 +508,7 @@ static int isFileReadable(const char *path, u32 *sz)
 	char buf;
 
 #if defined(MODULE_IMPORT_NS)
-	MODULE_IMPORT_NS(VFS_internal_I_am_really_a_filesystem_and_am_NOT_a_driver);
+//	MODULE_IMPORT_NS(VFS_internal_I_am_really_a_filesystem_and_am_NOT_a_driver);
 #endif
 
 	fp = filp_open(path, O_RDONLY, 0);
